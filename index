@@ -1,0 +1,62 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slawomir_Kolasinski_Labs</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.js'></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/controllers/main.js"></script>
+    <style>
+        .my-post {
+            background-color: dodgerblue;
+        }
+	.bg{
+		background-image:url("pomost1.jpg");
+		height:100%;
+		background-position:center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+    </style>
+</head>
+
+<body  ng-controller='ApplicationCtrl'>
+    <div class="bg"></div>
+    <nav class='navbar navbar-default'>
+        <div class="container ">
+            <ul class='nav navbar-nav' >
+                <li>
+                    <a href="/#/glowna">1Menu</a>
+                </li>
+                <li>
+                    <a href="/#/rejestracja">Zaloguj się</a>
+                </li>
+                <li>
+                    <a href="/#/logowanie">Załóż konto</a>
+                </li>
+	        <li>
+                    <a href="/#/logowanie">Dane osobowe</a>
+                </li>
+		<li>
+                    <a href="/#/logowanie">Ulubione</a>
+                </li>
+    		<li>
+                    <a href="/#/logowanie">Zamówienia</a>
+                </li>
+            </ul>
+            <p ng-if='currentUser' class="navbar-text navbar-right">
+                Zalogowany jako: {{currentUser.username}}, <a href="/#/wyloguj">Wyloguj</a>
+            </p>
+        </div>
+    </nav>
+    <div ng-view></div>
+</body>
+
+</html>
