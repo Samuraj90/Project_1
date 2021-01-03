@@ -20,7 +20,8 @@ public class ProductFormToProduct implements Converter<ProductForm, Product> {
         }
         product.setDescription(productForm.getDescription());
         product.setPrice(productForm.getPrice());
-        product.setImageUrl(productForm.getImageUrl());
+        product.setCount(productForm.getCount());
+        product.setActiveAlarm(productForm.getActiveAlarm());
         return product;
     }
 }

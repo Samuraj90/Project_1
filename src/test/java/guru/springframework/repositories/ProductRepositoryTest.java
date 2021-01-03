@@ -17,7 +17,8 @@ public class ProductRepositoryTest {
 
     private static final BigDecimal BIG_DECIMAL_100 = BigDecimal.valueOf(100.00);
     private static final String PRODUCT_DESCRIPTION = "a cool product";
-    private static final String IMAGE_URL = "http://an-imageurl.com/image1.jpg";
+    private static final double PRODUCT_COUNT_255= Double.valueOf(255);
+    static final double PRODUCT_ALARM_20 = Double.valueOf(20);
 
     @Autowired
     private ProductRepository productRepository;
@@ -32,8 +33,9 @@ public class ProductRepositoryTest {
         //given
         Product product = new Product();
         product.setDescription(PRODUCT_DESCRIPTION);
-        product.setImageUrl(IMAGE_URL);
+        product.setCount(PRODUCT_COUNT_255);
         product.setPrice(BIG_DECIMAL_100);
+        product.setActiveAlarm(PRODUCT_ALARM_20);
 
         //when
         productRepository.save(product);
@@ -44,6 +46,7 @@ public class ProductRepositoryTest {
         Assert.assertEquals((Long) 1L, newProduct.getId());
         Assert.assertEquals(PRODUCT_DESCRIPTION, newProduct.getDescription());
         Assert.assertEquals(BIG_DECIMAL_100.compareTo(newProduct.getPrice()), 0);
-        Assert.assertEquals(IMAGE_URL, newProduct.getImageUrl());
+        Assert.assertEquals(PRODUCT_COUNT_255, newProduct.getCount());
+        Assert.assertEquals(PRODUCT_ALARM_20, newProduct.getActiveAlarm());
     }
 }

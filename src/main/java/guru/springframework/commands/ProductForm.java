@@ -9,8 +9,9 @@ import java.math.BigDecimal;
 public class ProductForm {
     private Long id;
     private String description;
+    private double count;
     private BigDecimal price;
-    private String imageUrl;
+    private double activeAlarm;
 
     public Long getId() {
         return id;
@@ -28,6 +29,14 @@ public class ProductForm {
         this.description = description;
     }
 
+    public double getCount() {return count; }
+
+    public void setCount(double count) { this.count = count; }
+
+    public double getActiveAlarm() { return activeAlarm; }
+
+    public void setActiveAlarm(double activeAlarm) {this.activeAlarm = activeAlarm; }
+
     public BigDecimal getPrice() {
         return price;
     }
@@ -36,11 +45,4 @@ public class ProductForm {
         this.price = price;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 }
