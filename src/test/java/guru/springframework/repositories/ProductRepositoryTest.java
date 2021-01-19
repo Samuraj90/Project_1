@@ -17,8 +17,8 @@ public class ProductRepositoryTest {
 
     private static final BigDecimal BIG_DECIMAL_100 = BigDecimal.valueOf(100.00);
     private static final String PRODUCT_DESCRIPTION = "a cool product";
-    private static final double PRODUCT_COUNT_255= Double.valueOf(255);
-    static final double PRODUCT_ALARM_20 = Double.valueOf(20);
+    private static final Double PRODUCT_COUNT_255= 255D;
+    static final Double PRODUCT_ALARM_20 = 20.5D;
 
     @Autowired
     private ProductRepository productRepository;

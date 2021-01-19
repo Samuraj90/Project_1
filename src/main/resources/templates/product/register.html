@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Spring Core Online Tutorial - List Products</title>
+    <title>Spring Core Online Tutorial - Product Form</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
@@ -14,10 +14,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
 </head>
 <body>
-
-    <nav class ="navbar navbar-expand-md navbar-white bg-white sticky-top">
+<nav class ="navbar navbar-expand-md navbar-white bg-white sticky-top">
     <a class ="navbar-brand" href="#" ><img src="../../static/img/logo.jpg" width="30" height="30"  class="d-inline-block mr-1 align-bottom"  /></a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="collapse_target">
         <span class="navbar-toggoler-icon"></span>
@@ -62,47 +62,35 @@
         </ul>
     </div>
 </nav>
-
-    <section class="container-fluid bg">
-        <section class="row justify-content-center">
-            <div class="form-container col-12 col-md-9 ">
-                <div th:if="${not #lists.isEmpty(products)}">
-                    <h2>Lista produktów</h2>
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Id</th>
-                            <th>Nazwa</th>
-                            <th>Ilość</th>
-                            <th>Cena</th>
-                            <th>Poziom alarmowy</th>
-                            <th>Wyświetl</th>
-                            <th>Modyfikuj</th>
-                            <th>Usuń</th>
-                        </tr>
-                        <tr th:each="product : ${products}">
-                            <td th:text="${product.id}"></td>
-                            <td th:text="${product.description}"></td>
-                            <td th:text="${product.count}"></td>
-                            <td th:text="${product.price}"></td>
-                            <td th:text="${product.activeAlarm}"></td>
-                            <td><a th:href="${'/product/show/' + product.id}">Wyświetl</a> </td>
-                            <td><a th:href="${'/product/edit/' + product.id}">Modyfikuj</a> </td>
-                            <td><a th:href="${'/product/delete/' + product.id}">Usuń</a> </td>
-                        </tr>
-                    </table>
+<section class="container-fluid bg">
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-8 col-md-4">
+            <form class="form-container">
+                <div class="form-group">
+                    <label for="userName">Nazwa użytkownika</label>
+                    <input type="text" class="form-control" id="userName" aria-describedby="user" placeholder="Podaj nazwę użytkownika" th:required="required"/>
+                    <small id="user" class="form-text text-muted">Tej nazwy będziesz używać do logowania w systemie</small>
                 </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <a href="/product/new">Dodaj nowy produkt</a>
-                    </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Nr. telefonu</label>
+                    <input type="text" class="form-control" id="phoneNumber" aria-describedby="phone" placeholder="Twój numer telefonu" />
+                    <small id="phone" class="form-text text-muted">Umożliwia kontakt w sprawie zamówienia</small>
                 </div>
-            </div>
-        </section>
-    </section>
+                <div class="form-group">
+                    <label for="address">Adres</label>
+                    <input type="text" class="form-control" id="address" aria-describedby="addressHelp" placeholder="Wpisz adres" th:required="required"/>
+                    <small id="addressHelp" class="form-text text-muted">Domyślny adres dowozu.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Hasło</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" th:required="required"/>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Zatwierdź</button>
+            </form>
+        </section >
+    </section >
+</section >
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>

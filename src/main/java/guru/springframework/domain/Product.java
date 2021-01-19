@@ -16,9 +16,9 @@ public class Product {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String description;
-    private double count;
+    private Double count;
     private BigDecimal price;
-    private double activeAlarm;
+    private Double activeAlarm;
 
     public Long getId() {
         return id;
@@ -36,13 +36,13 @@ public class Product {
         this.description = description;
     }
 
-    public double getCount() {return count; }
+    public Double getCount() {return count; }
 
-    public void setCount(double count) { this.count = count; }
+    public void setCount(Double count) { this.count = count; }
 
-    public double getActiveAlarm() { return activeAlarm; }
+    public Double getActiveAlarm() { return activeAlarm; }
 
-    public void setActiveAlarm(double activeAlarm) {this.activeAlarm = activeAlarm; }
+    public void setActiveAlarm(Double activeAlarm) {this.activeAlarm = activeAlarm; }
 
     public BigDecimal getPrice() {
         return price;
